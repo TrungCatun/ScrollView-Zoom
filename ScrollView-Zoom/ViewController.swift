@@ -8,12 +8,21 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UIScrollViewDelegate {
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var imagePhoto: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+       // scrollView.minimumZoomScale = 1.0
+       // scrollView.maximumZoomScale = 5.0
     }
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return imagePhoto
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

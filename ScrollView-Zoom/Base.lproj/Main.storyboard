@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u9W-b0-Pdo">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,82 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ScrollView_Zoom" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.10000000000000001" maximumZoomScale="10" translatesAutoresizingMaskIntoConstraints="NO" id="0Vw-Yb-rIU">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MOo-kk-n0R" userLabel="Content">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qwe" translatesAutoresizingMaskIntoConstraints="NO" id="46Y-BL-dGk">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="46Y-BL-dGk" firstAttribute="leading" secondItem="MOo-kk-n0R" secondAttribute="leading" id="UvZ-we-rPo"/>
+                                            <constraint firstItem="46Y-BL-dGk" firstAttribute="top" secondItem="MOo-kk-n0R" secondAttribute="top" id="VrQ-et-eSt"/>
+                                            <constraint firstAttribute="bottom" secondItem="46Y-BL-dGk" secondAttribute="bottom" id="YCe-ex-mKQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="46Y-BL-dGk" secondAttribute="trailing" id="fqj-ac-h01"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="MOo-kk-n0R" firstAttribute="top" secondItem="0Vw-Yb-rIU" secondAttribute="top" id="C6c-j6-7Dg"/>
+                                    <constraint firstAttribute="trailing" secondItem="MOo-kk-n0R" secondAttribute="trailing" id="GzC-Pg-C8g"/>
+                                    <constraint firstItem="MOo-kk-n0R" firstAttribute="leading" secondItem="0Vw-Yb-rIU" secondAttribute="leading" id="MeL-7S-sao"/>
+                                    <constraint firstAttribute="bottom" secondItem="MOo-kk-n0R" secondAttribute="bottom" id="jgL-45-bIA"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="yq9-GV-rbU"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0Vw-Yb-rIU" secondAttribute="bottom" id="97k-oZ-zH6"/>
+                            <constraint firstItem="MOo-kk-n0R" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" id="FSg-K1-PEz"/>
+                            <constraint firstItem="0Vw-Yb-rIU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Wa8-fu-AQe"/>
+                            <constraint firstItem="0Vw-Yb-rIU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="osS-lc-Tls"/>
+                            <constraint firstItem="0Vw-Yb-rIU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ra7-PT-m8k"/>
+                            <constraint firstItem="MOo-kk-n0R" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="xuZ-VE-OaD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="UZn-5J-VJ2"/>
+                    <connections>
+                        <outlet property="imagePhoto" destination="46Y-BL-dGk" id="hxs-40-LeW"/>
+                        <outlet property="scrollView" destination="0Vw-Yb-rIU" id="cB0-DX-AsF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="456.80000000000001" y="117.39130434782609"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="j5l-Hl-Hb0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="u9W-b0-Pdo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Dwu-dS-pfy">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="tHn-Ed-DiI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ar-wG-dos" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-462" y="117"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="qwe" width="320" height="480"/>
+    </resources>
 </document>
